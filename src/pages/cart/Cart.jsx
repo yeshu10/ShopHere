@@ -144,7 +144,9 @@ function Cart() {
     pay.open();
     console.log(pay)
   }
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <Layout >
