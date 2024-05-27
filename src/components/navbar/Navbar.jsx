@@ -157,9 +157,19 @@ export default function Navbar() {
 
                   {user ? <a onClick={logout} className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Logout
-                  </a> : <Link to={'/signup'} className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
-                    Signup
-                  </Link>}
+                  </a> : (
+  <div>
+    <Link to={'/login'} className="text-sm font-medium text-gray-700 cursor-pointer mr-4" style={{ color: mode === 'dark' ? 'white' : '' }}>
+      Login 
+    </Link> 
+    
+    <Link to={'/signup'} className="text-sm font-medium text-gray-700 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '' }}>
+      Signup
+    </Link>
+  </div>
+)
+                  
+                  }
 
                 </div>
 

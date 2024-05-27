@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import myContext from '../../context/data/myContext';
 import { toast } from 'react-toastify';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
@@ -15,13 +15,13 @@ function Signup() {
 
     const context = useContext(myContext);
     const { loading, setLoading } = context;
+    const navigate = useNavigate();
 
     const signup = async () => {
         setLoading(true)
         if (name === "" || email === "" || password === "") {
             return toast.error("All fields are required")
         }
-
         try {
             const users = await createUserWithEmailAndPassword(auth, email, password);
 
@@ -40,7 +40,7 @@ function Signup() {
             setEmail("");
             setPassword("");
             setLoading(false)
-            
+            navigate('/login')
         } catch (error) {
             console.log(error)
             setLoading(false)

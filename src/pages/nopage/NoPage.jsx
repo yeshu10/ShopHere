@@ -1,8 +1,9 @@
 import React from 'react'
+import ProductCard from '../../components/productCard/ProductCard'
 
 function NoPage() {
   return (
-    <div>NoPage</div>
+    <ProductCard/>
   )
 }
 
