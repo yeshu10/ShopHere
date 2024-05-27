@@ -116,6 +116,19 @@ function Cart() {
 
         try {
           const result = addDoc(collection(fireDB, "orders"), orderInfo)
+          toast.success('Order placed successfully', {
+            position: "top-center",
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+      
+          // Clear the cart after placing the order
+          clearCart();
         } catch (error) {
           console.log(error)
         }
