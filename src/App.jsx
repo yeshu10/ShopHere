@@ -18,6 +18,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import AddProduct from "./pages/admin/pages/AddProduct";
 import UpdateProduct from "./pages/admin/pages/UpdateProduct";
 import AllProducts from "./pages/allproducts/AllProducts";
+import Contact from "./pages/contact/Contact";
+import About from "./pages/about/About";
+import ReturnPolicy from "./pages/returnpolicy/ReturnPolicy";
 
 function App() {
   return (
@@ -39,6 +42,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/allproducts" element={<AllProducts />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/returnpolicy" element={<ReturnPolicy />} />
+        
           <Route path="/addproduct" element={
             <ProtectedRoutesForAdmin><AddProduct /></ProtectedRoutesForAdmin>} />
           <Route path="/updateproduct" element={
