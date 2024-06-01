@@ -94,23 +94,26 @@ function MyState(props) {
 
   const edithandle = (item) => {
     setProducts(item)
-  }
-  // update product
-  const updateProduct = async (item) => {
+}
+
+const updateProduct = async () => {
     setLoading(true)
     try {
-      await setDoc(doc(fireDB, "products", products.id), products);
-      toast.success("Product Updated successfully")
-      getProductData();
-      setLoading(false)
-      setTimeout(()=>{window.location.href = '/dashboard'},800);
-      
+
+        await setDoc(doc(fireDB, 'products', products.id), products)
+        toast.success("Product Updated successfully")
+        setTimeout(() => {
+            window.location.href = '/dashboard'
+        }, 800);
+        getProductData();
+        setLoading(false)
+
     } catch (error) {
-      setLoading(false)
-      console.log(error)
+        console.log(error)
+        setLoading(false)
     }
-    setProducts("")
-  }
+}
+
 
   const deleteProduct = async (item) => {
 

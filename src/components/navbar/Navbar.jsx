@@ -113,7 +113,12 @@ export default function Navbar() {
         <p className="flex h-10 items-center justify-center bg-purple-200 px-4 text-sm font-medium text-purple-600 sm:px-6 lg:px-8" style={{ backgroundColor: mode === 'dark' ? 'rgb(62 64 66)' : '', color: mode === 'dark' ? 'white' : '', }}>
           Get ₹200 off  on your first order   </p>
 
-        <nav aria-label="Top" className="bg-gradient-to-r from-pink-100 to-purple-200 px-4 sm:px-6 lg:px-8 shadow-xl " style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '', }}>
+          <nav aria-label="Top" className={`px-4 sm:px-6 lg:px-8 shadow-xl ${ mode === 'dark' ? 'bg-gray-800 text-white' : 'bg-gradient-to-r from-pink-100 to-purple-200 text-gray-800' }`}
+      style={{
+        backgroundColor: mode === 'dark' ? '#282c34' : '',
+        color: mode === 'dark' ? 'white' : '',
+      }}
+    >
           <div className="">
             <div className="flex h-16 items-center">
               <button
