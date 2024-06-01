@@ -21,6 +21,7 @@ import AllProducts from "./pages/allproducts/AllProducts";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import ReturnPolicy from "./pages/returnpolicy/ReturnPolicy";
+import Navlog from "./components/navbar/Navlog";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/returnpolicy" element={<ReturnPolicy />} />
+          <Route path="/navlog" element={<Navlog />} />
         
           <Route path="/addproduct" element={
             <ProtectedRoutesForAdmin><AddProduct /></ProtectedRoutesForAdmin>} />

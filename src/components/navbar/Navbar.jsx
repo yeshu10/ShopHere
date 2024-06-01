@@ -109,11 +109,11 @@ export default function Navbar() {
       </Transition.Root>
 
       {/* desktop  */}
-      <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-purple-400 px-4 text-sm font-medium text-white sm:px-6 lg:px-8" style={{ backgroundColor: mode === 'dark' ? 'rgb(62 64 66)' : '', color: mode === 'dark' ? 'white' : '', }}>
+      <header className="relative bg-gradient-to-r from-pink-300 to-purple-300">
+        <p className="flex h-10 items-center justify-center bg-purple-200 px-4 text-sm font-medium text-purple-600 sm:px-6 lg:px-8" style={{ backgroundColor: mode === 'dark' ? 'rgb(62 64 66)' : '', color: mode === 'dark' ? 'white' : '', }}>
           Get ₹200 off  on your first order   </p>
 
-        <nav aria-label="Top" className="bg-gray-100 px-4 sm:px-6 lg:px-8 shadow-xl " style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '', }}>
+        <nav aria-label="Top" className="bg-gradient-to-r from-pink-100 to-purple-200 px-4 sm:px-6 lg:px-8 shadow-xl " style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '', }}>
           <div className="">
             <div className="flex h-16 items-center">
               <button
@@ -132,7 +132,7 @@ export default function Navbar() {
               <div className="ml-4 flex lg:ml-0">
                 <Link to={'/'} className='flex'>
                   <div className="flex ">
-                    <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>SarvHaat</h1>
+                    <h1 className=' text-2xl font-bold text-pink-600  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>SarvHaat</h1>
                   </div>
                 </Link>
               </div>
@@ -140,29 +140,29 @@ export default function Navbar() {
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
 
-                  <Link to={'/allproducts'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                  <Link to={'/allproducts'} className="text-sm font-medium text-pink-600 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                    Products
                   </Link>
-                  <Link to={'/order'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                  <Link to={'/order'} className="text-sm font-medium text-pink-600 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Order
                   </Link>
 
                   {user?.user?.email === 'knupadhyay784@gmail.com'?
-                   <Link to={'/dashboard'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                   <Link to={'/dashboard'} className="text-sm font-medium text-pink-600 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Admin
                   </Link> : ""
                 }
                  
 
-                  {user ? <a onClick={logout} className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                  {user ? <a onClick={logout} className="text-sm font-medium text-pink-600 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Logout
                   </a> : (
   <div>
-    <Link to={'/login'} className="text-sm font-medium text-gray-700 cursor-pointer mr-4" style={{ color: mode === 'dark' ? 'white' : '' }}>
+    <Link to={'/login'} className="text-sm font-medium text-pink-600 cursor-pointer mr-4" style={{ color: mode === 'dark' ? 'white' : '' }}>
       Login 
     </Link> 
     
-    <Link to={'/signup'} className="text-sm font-medium text-gray-700 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '' }}>
+    <Link to={'/signup'} className="text-sm font-medium text-pink-600 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '' }}>
       Signup
     </Link>
   </div>
