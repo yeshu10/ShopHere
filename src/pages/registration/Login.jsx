@@ -17,6 +17,9 @@ function Login() {
 
     const login = async () => {
         setLoading(true)
+        if (email === "" || password === "") {
+            return toast.error("Both fields are required")
+        }
         try {
             const result = await signInWithEmailAndPassword(auth,email,password);
             toast.success("Login successful", {
@@ -34,6 +37,7 @@ function Login() {
             setLoading(false)
             
         } catch (error) {
+            toast.error("Please signup before login")
             console.log(error)
             setLoading(loading)
         }
