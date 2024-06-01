@@ -183,6 +183,43 @@ const updateProduct = async () => {
     getUserData();
   }, []);
 
+  const countProduct = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(fireDB, "products"));
+      return querySnapshot.size;
+    } catch (error) {
+      console.log(error);
+      return 0;
+    }
+  };
+  
+  const countOrder = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(fireDB, "orders"));
+      return querySnapshot.size;
+    } catch (error) {
+      console.log(error);
+      return 0;
+    }
+  };
+  
+  const countUser = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(fireDB, "users"));
+      return querySnapshot.size;
+    } catch (error) {
+      console.log(error);
+      return 0;
+    }
+  }; 
+
+  
+  const [productCount, setProductCount] = useState(0);
+  const [orderCount, setOrderCount] = useState(0);
+  const [userCount, setUserCount] = useState(0);
+ 
+  
+
 
   const [searchkey, setSearchkey] = useState('')
   const [filterType, setFilterType] = useState('')
@@ -192,7 +229,7 @@ const updateProduct = async () => {
     <MyContext.Provider value={{ 
       mode, toggleMode, loading,setLoading,
       products, setProducts,addProduct,product,edithandle,updateProduct,deleteProduct,order,user ,searchkey, setSearchkey,filterType, setFilterType,
-      filterPrice, setFilterPrice }}>
+      filterPrice, setFilterPrice, countOrder , countProduct ,countUser ,productCount, setProductCount,orderCount, setOrderCount,userCount, setUserCount}}>
       {props.children}
     </MyContext.Provider>
   )
