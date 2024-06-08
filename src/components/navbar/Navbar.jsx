@@ -156,9 +156,7 @@ export default function Navbar() {
                    <Link to={'/dashboard'} className="text-sm font-medium text-pink-600 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Admin
                   </Link> : ""
-                }
-                 
-
+                }            
                   {user ? <a onClick={logout} className="text-sm font-medium text-pink-600 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Logout
                   </a> : (
@@ -207,7 +205,22 @@ export default function Navbar() {
                         ) : ''}
                   </button>
                 </div>
-
+                {/* Wishlist */}
+                {user ? <div className="ml-4 flow-root lg:ml-6">
+                  <Link to={'/wishlist'} className="group -m-2 flex items-center p-2" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                  <svg
+                                        fill="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        className="w-5 h-5"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                                    </svg>
+               
+                  </Link>                  
+                </div> : ""}       
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
                   <Link to={'/cart'} className="group -m-2 flex items-center p-2" style={{ color: mode === 'dark' ? 'white' : '', }}>
@@ -216,8 +229,9 @@ export default function Navbar() {
                     </svg>
                     <span className="ml-2 text-sm font-medium text-gray-700 group-" style={{ color: mode === 'dark' ? 'white' : '', }}>{cartItems.length}</span>
                     <span className="sr-only">items in cart, view bag</span>
-                  </Link>
+                  </Link>                  
                 </div>
+                         
               </div>
             </div>
           </div>

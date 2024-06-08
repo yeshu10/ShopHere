@@ -100,7 +100,7 @@ function Dashboard() {
                 </h2>
                 <p 
                   className="text-purple-500 font-bold" 
-                  style={{ color: mode === 'dark' ? 'white' : 'purple-500' }}
+                  style={{ color: mode === 'dark' ? 'white' : 'purple-400' }}
                 >
                   Total Users
                 </p>
