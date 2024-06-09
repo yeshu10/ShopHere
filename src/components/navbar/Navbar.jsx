@@ -207,7 +207,7 @@ export default function Navbar() {
                 </div>
                 {/* Wishlist */}
                 {user ? <div className="ml-4 flow-root lg:ml-6">
-                  <Link to={'/wishlist'} className="group -m-2 flex items-center p-2" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                  <Link to={'/wishlist'} className="group -m-2 flex items-center p-2 " style={{ color: mode === 'dark' ? 'white' : '#C71585' }}>
                   <svg
                                         fill="currentColor"
                                         strokeLinecap="round"
