@@ -7,7 +7,11 @@ export default function Footer() {
     const context = useContext(myContext)
     const { toggleMode, mode } = context
     return (
-        <footer className="text-gray-600 body-font bg-gray-300 mt-auto" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '', }}>
+        <footer aria-label="Footer" className={`text-gray-600 body-font bg-gray-300 mt-auto ${ mode === 'dark' ? 'bg-gray-800 text-white' : 'bg-gradient-to-r from-pink-100 to-purple-200 text-gray-800' }`}
+        style={{
+            backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '',
+            color: mode === 'dark' ? 'white' : '',
+        }}>
             <div className="container px-5 py-24 mx-auto" >
                 <div className="flex flex-wrap md:text-left text-center order-first">
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
@@ -70,7 +74,7 @@ export default function Footer() {
                         </div>
                     </Link>
                     <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4" style={{ color: mode === 'dark' ? 'white' : '' }}>© 2023 SarvHaat —
-                        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank" style={{ color: mode === 'dark' ? 'white' : '' }}>www.ebharat.com</a>
+                        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank" style={{ color: mode === 'dark' ? 'white' : '' }}>www.sarvhaat.com</a>
                     </p>
                     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                         <a className="text-gray-500">

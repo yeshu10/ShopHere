@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext,useEffect } from 'react';
 import myContext from '../../context/data/myContext';
 import Layout from '../../components/layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFromWishlist } from '../../redux/wishlistSlice';
+import { clearFromWishlist, deleteFromWishlist } from '../../redux/wishlistSlice';
 import { toast } from 'react-toastify';
 import { addToCart } from '../../redux/cartSlice';
 
@@ -18,13 +18,28 @@ function Wishlist() {
     toast.success('Item removed from wishlist');
   };
 
+  const clearWishlist = () => {    
+  
+    dispatch(clearFromWishlist());
+    toast.success('Cleared Wishlist');
+  };
+
   const addCart = (product) => {
     dispatch(addToCart(product));
     toast.success('Added to cart');
   };
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <Layout>
+        <div className="flex justify-between items-center mb-10 px-6">
+        <h1 className=" text-2xl font-bold text-center flex-grow text-pink-600">Wishlist</h1>
+        <button  type="button"  onClick={clearWishlist}   className="focus:outline-none  text-white bg-gradient-to-r from-pink-300 to-purple-400  hover:from-pink-300 hover:via-purple-300 hover:to-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 ">
+          Clear Wishlist
+        </button>
+      </div>
       <div className="mx-auto max-w-6xl px-6 xl:px-0 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
           {wishlistItems.map((item, index) => (

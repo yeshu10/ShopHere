@@ -14,7 +14,9 @@ const wishlistSlice = createSlice({
             return newState;
         },
         clearFromWishlist() {
-            return [];
+            const newState = [];
+            localStorage.setItem('wishlist', JSON.stringify(newState));
+            return newState;
         }
     }
 });
